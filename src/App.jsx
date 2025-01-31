@@ -9,6 +9,17 @@ function App() {
   const [duration, setDuration] = useState(10);
   const [initialInvestment, setInitialInvestment] = useState(10000);
 
+  const inputIsValid = UserInput.duration >= 1;
+
+  function handleChange(inputIdentifier, newValue) {
+    setUserInput((prevUserInput) => {
+      return {
+        ...prevUserInput,
+        [inputIdentifier]: newValue,
+      };
+    });
+  }
+
   return (
     <div>
       <Header />
