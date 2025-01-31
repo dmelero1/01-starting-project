@@ -1,11 +1,12 @@
 import React from "react";
-import image from "../assets/investment-calculator-logo.png";
+import Logo from "../assets/investment-calculator-logo.png";
 function Header() {
-  return;
-  <div id="header">
-    <img src="../assets/investment-calculator-logo.png" alt="" />
-    <h1>Investment calculator</h1>
-  </div>;
+  return (
+    <div id="header">
+      <img src={Logo} alt="Logo" />
+      <h1>Investment calculator</h1>
+    </div>
+  );
 }
 
 export default Header;
