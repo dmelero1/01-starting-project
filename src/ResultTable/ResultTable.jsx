@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { calculateInvestmentResults } from "../util/investment";
 
 function ResultTable() {
+  /**duration, initialInvestment, annualInvestment, expectedReturn*/
+
+  /* const investmentResults = calculateInvestmentResults((duration, initialInvestment, annualInvestment, expectedReturn)); */
+
   return (
-    <div id="result">
+    <table id="result">
       <thead>
         <tbody>
           <th>
@@ -27,7 +32,7 @@ function ResultTable() {
           </th>
         </tbody>
       </thead>
-    </div>
+    </table>
   );
 }
 
