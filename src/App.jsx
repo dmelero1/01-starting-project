@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./Header/Header";
 import UserInput from "./UserInput/UserInput";
 import ResultTable from "./ResultTable/ResultTable";
+import { calculateInvestmentResults } from "./util/investment.js";
 
 function App() {
   const [annualInvestment, setAnnualInvestment] = useState(1200);
@@ -20,6 +21,16 @@ function App() {
     });
   }
 
+  const investmentResults =
+    duration > 0
+      ? calculateInvestmentResults({
+          initialInvestment,
+          annualInvestment,
+          expectedReturn,
+          duration,
+        })
+      : [];
+
   return (
     <div>
       <Header />
@@ -33,7 +44,7 @@ function App() {
         initialInvestment={initialInvestment}
         setInitialInvestment={setInitialInvestment}
       />
-      <ResultTable />
+      <ResultTable result={investmentResults} />
     </div>
   );
 }
